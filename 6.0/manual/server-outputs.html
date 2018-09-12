@@ -5,7 +5,7 @@
 </li><li class="mainmenu-doc"><a href="/tuto/6.2/manual/intro" class="ocsimore_phrasing_link">Doc</a>
 </li><li class="mainmenu-current"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
 </li><li><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
-</li><li><a href="/lwt/3.3.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
+</li><li><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
 </li><li><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
 </li></ul><aside class="how-drawer"><input id="how-drawer-toggle" type="checkbox"/><label for="how-drawer-toggle" id="how-drawer-label"><span class="how-drawer-icon"></span></label><nav class="how-drawer-content"><ul class="drawermainmenu"><li class="drawermainmenu-home"><a href="/" class="ocsimore_phrasing_link">Home</a>
@@ -13,7 +13,7 @@
 </li><li class="drawermainmenu-current drawermainmenu-project"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
 </li><li class="drawermainmenu-project"><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigenserver/2.9/manual/quickstart" class="ocsimore_phrasing_link">Server</a>
-</li><li class="drawermainmenu-project"><a href="/lwt/3.3.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
+</li><li class="drawermainmenu-project"><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
 </li><li class="drawermainmenu-project"><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-toolkit/1.1.0/manual/intro" class="ocsimore_phrasing_link">Toolkit</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
@@ -344,7 +344,7 @@ This application must be able to handle several requests at the same
 time, in order to prevent a single request from making the whole
 server hang.  To make this possible, Ocsigen uses <em>cooperative
 threads</em>.  The monadic style followed by
-<span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt">Lwt</a></span> makes such threads easy to use.
+<span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt">Lwt</a></span> makes such threads easy to use.
 </p><p>Below is an example of a page written in a non-cooperative way, that
 has the effect of stopping the entire server for 5 seconds. No one
 will be able to query the server during this period:
@@ -360,7 +360,7 @@ will be able to query the server during this period:
              (head (title (pcdata &quot;&quot;)) [])
              (body [h1 [pcdata &quot;Ok now, you can read the page.&quot;]])
          ))</code></pre><p>To solve this problem, use a cooperative version of <span class="teletype">Unix.sleep</span>:
-<span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_unix#VALsleep">Lwt_unix.​sleep</a></span>:
+<span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_unix#VALsleep">Lwt_unix.​sleep</a></span>:
 </p><pre class=""><code class="language-ocaml translatable">open Eliom_content.Html.D
 let looong =
   Eliom_registration.Html.create
@@ -375,7 +375,7 @@ let looong =
              (body [h1 [pcdata &quot;Ok now, you can read the page.&quot;]])
          ))</code></pre><p>If you want to use, say, a database library that is not written in a
 cooperative way, but which is thread-safe for preemptive threads, use
-the <span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_preemptive">Lwt_preemptive</a></span> module to detach
+the <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_preemptive">Lwt_preemptive</a></span> module to detach
 the computation. In the following example, we simulate the request by
 making a call to <span class="code">Unix.sleep</span>:
 </p><pre class=""><code class="language-ocaml translatable">let looong2 =

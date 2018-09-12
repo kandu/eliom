@@ -5,7 +5,7 @@
 </li><li class="mainmenu-doc"><a href="/tuto/6.2/manual/intro" class="ocsimore_phrasing_link">Doc</a>
 </li><li class="mainmenu-current"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
 </li><li><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
-</li><li><a href="/lwt/3.3.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
+</li><li><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
 </li><li><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
 </li></ul><aside class="how-drawer"><input id="how-drawer-toggle" type="checkbox"/><label for="how-drawer-toggle" id="how-drawer-label"><span class="how-drawer-icon"></span></label><nav class="how-drawer-content"><ul class="drawermainmenu"><li class="drawermainmenu-home"><a href="/" class="ocsimore_phrasing_link">Home</a>
@@ -13,7 +13,7 @@
 </li><li class="drawermainmenu-current drawermainmenu-project"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
 </li><li class="drawermainmenu-project"><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigenserver/2.9/manual/quickstart" class="ocsimore_phrasing_link">Server</a>
-</li><li class="drawermainmenu-project"><a href="/lwt/3.3.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
+</li><li class="drawermainmenu-project"><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
 </li><li class="drawermainmenu-project"><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-toolkit/1.1.0/manual/intro" class="ocsimore_phrasing_link">Toolkit</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
@@ -164,25 +164,25 @@ module.
 </p><p>Comet defines channels which can convey data. A channel is created
 using a Lwt stream. It is a kind of cooperative lazy list.
 </p><p>The two main methods to create a stream are through the functions
-<span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#VALfrom">Lwt_stream.​from</a></span> and
-<span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#VALcreate">Lwt_stream.​create</a></span>.
+<span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#VALfrom">Lwt_stream.​from</a></span> and
+<span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#VALcreate">Lwt_stream.​create</a></span>.
 </p><pre class=""><code class="language-ocaml translatable">val from : (unit -&gt; 'a option Lwt.t) -&gt; 'a t
-val create : unit -&gt; 'a t * ('a option -&gt; unit)</code></pre><p>Function <span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#VALfrom">Lwt_stream.​from</a></span> makes possible
+val create : unit -&gt; 'a t * ('a option -&gt; unit)</code></pre><p>Function <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#VALfrom">Lwt_stream.​from</a></span> makes possible
 to create a stream where a new
 value is added each time a function returns.
-Function <span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#VALcreate">Lwt_stream.​create</a></span>
+Function <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#VALcreate">Lwt_stream.​create</a></span>
 returns a stream and a function to push new values to the stream.
 </p><p>On client side the type
 <span><a class="ocsforge_doclink_eliom" href="/eliom/4.0/api/client/Eliom_comet.Channel#TYPEt">Eliom_comet.​Channel.​t</a></span>
-is just a Lwt stream <span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#TYPEt">Lwt_stream.​t</a></span>.
+is just a Lwt stream <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#TYPEt">Lwt_stream.​t</a></span>.
 </p><p>There are 3 kind of channels depending on how you want to send data.
 </p><ul><li> Channels created with
 <span><a class="ocsforge_doclink_eliom" href="/eliom/4.0/api/server/Eliom_comet.Channel#VALcreate">Eliom_comet.​Channel.​create</a></span>
 have a buffer with a limited size. Message are read from the stream as
 soon as they are available, i.e. for stream created with
-<span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#VALfrom">Lwt_stream.​from</a></span>, that means that the
+<span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#VALfrom">Lwt_stream.​from</a></span>, that means that the
 function is called another time as soon as the previous one terminate.
-For stream created with <span><a class="ocsforge_doclink_lwt" href="/lwt/3.3.0/api/Lwt_stream#VALcreate">Lwt_stream.​create</a></span>,
+For stream created with <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_stream#VALcreate">Lwt_stream.​create</a></span>,
 this is as soon as they are pushed. If the client missed too much
 messages (more than the size of the buffer) it will receive an exception
 <span><a class="ocsforge_doclink_eliom" href="/eliom/4.0/api/client/Eliom_comet#EXCEPTIONChannel_full">Eliom_comet.​Channel_full</a></span>
