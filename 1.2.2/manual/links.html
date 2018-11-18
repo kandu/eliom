@@ -6,7 +6,7 @@
 </li><li class="mainmenu-current"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
 </li><li><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
 </li><li><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
-</li><li><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
+</li><li><a href="/tyxml/4.3.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
 </li></ul><aside class="how-drawer"><input id="how-drawer-toggle" type="checkbox"/><label for="how-drawer-toggle" id="how-drawer-label"><span class="how-drawer-icon"></span></label><nav class="how-drawer-content"><ul class="drawermainmenu"><li class="drawermainmenu-home"><a href="/" class="ocsimore_phrasing_link">Home</a>
 </li><li class="drawermainmenu-doc"><a href="/tuto/6.2/manual/intro" class="ocsimore_phrasing_link">Doc</a>
@@ -14,7 +14,7 @@
 </li><li class="drawermainmenu-project"><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigenserver/2.9/manual/quickstart" class="ocsimore_phrasing_link">Server</a>
 </li><li class="drawermainmenu-project"><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
-</li><li class="drawermainmenu-project"><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
+</li><li class="drawermainmenu-project"><a href="/tyxml/4.3.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-toolkit/1.1.0/manual/intro" class="ocsimore_phrasing_link">Toolkit</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
 </li><li class="drawermainmenu-page"><a href="/projects" class="ocsimore_phrasing_link">Other projects</a>
@@ -118,7 +118,7 @@ let form = Eliom_registration.Html5.register_service [&quot;form&quot;] unit
          (body [f])))</code></pre><p>
 <a href="/tuto/form" class="ocsimore_phrasing_link"> See the function <span class="code">form</span> in action</a>.<br/>
 </p><p>If you want to use typed parameters,
-you cannot use functions like  <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.1.0/api/Html5.M#VALinput">Html5.​M.​input</a></span> to
+you cannot use functions like  <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.3.0/api/Html5.M#VALinput">Html5.​M.​input</a></span> to
 create your forms (but you can use it if you want to use parameters defined with
 <span><a class="ocsforge_doclink_eliom" href="/eliom/1.2.2/api/server/Eliom_parameter#VALany">Eliom_parameter.​any</a></span>). Indeed, parameter names are typed to force them
 be used properly. In our example, <span class="code">number_name</span> has type
@@ -129,7 +129,7 @@ be used properly. In our example, <span class="code">number_name</span> has type
 <span class="code">string_input</span> (or other widgets).
 All functions for creating form widgets are detailed
 in <span><a class="ocsforge_doclink_eliom" href="/eliom/1.2.2/api/server/Eliom_content.Html5.D">Eliom_content.​Html5.​D</a></span> (and <span><a class="ocsforge_doclink_eliom" href="/eliom/1.2.2/api/server/Eliom_content.Html5.D">Eliom_content.​Html5.​D</a></span>).
-</p><p>For untyped forms, you may use functions from <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.1.0/api/HTML5.M">HTML5.​M</a></span> (or OCamlDuce's syntax, or whatever syntax you are
+</p><p>For untyped forms, you may use functions from <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.3.0/api/HTML5.M">HTML5.​M</a></span> (or OCamlDuce's syntax, or whatever syntax you are
 using) or functions which name is prefixed by &quot;<span class="code">raw_</span>&quot;.  Here is a form linking to our (untyped) service
 <span class="code">raw_serv</span>.
 </p><pre class=""><code class="language-ocaml translatable">let raw_form =

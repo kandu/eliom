@@ -6,7 +6,7 @@
 </li><li class="mainmenu-current"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
 </li><li><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
 </li><li><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
-</li><li><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
+</li><li><a href="/tyxml/4.3.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
 </li></ul><aside class="how-drawer"><input id="how-drawer-toggle" type="checkbox"/><label for="how-drawer-toggle" id="how-drawer-label"><span class="how-drawer-icon"></span></label><nav class="how-drawer-content"><ul class="drawermainmenu"><li class="drawermainmenu-home"><a href="/" class="ocsimore_phrasing_link">Home</a>
 </li><li class="drawermainmenu-doc"><a href="/tuto/6.2/manual/intro" class="ocsimore_phrasing_link">Doc</a>
@@ -14,7 +14,7 @@
 </li><li class="drawermainmenu-project"><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigenserver/2.9/manual/quickstart" class="ocsimore_phrasing_link">Server</a>
 </li><li class="drawermainmenu-project"><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
-</li><li class="drawermainmenu-project"><a href="/tyxml/4.1.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
+</li><li class="drawermainmenu-project"><a href="/tyxml/4.3.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-toolkit/1.1.0/manual/intro" class="ocsimore_phrasing_link">Toolkit</a>
 </li><li class="drawermainmenu-project"><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
 </li><li class="drawermainmenu-page"><a href="/projects" class="ocsimore_phrasing_link">Other projects</a>
@@ -40,13 +40,13 @@ and is compatible with the previous one.
 </li></ul><p>The types in OCaml closest to XML types are <em>polymorphic variants</em>.
 Ocsigen uses them to provide a module with very good HTML5 typing.
 The full documentation is available
-<span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.1.0/api/Html5.M">in the TyXML documentation</a></span>.
+<span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.3.0/api/Html5.M">in the TyXML documentation</a></span>.
 </p><nav id="overview" class="ocsimore_outline"><header><p><strong>Table of contents</strong></p></header></nav><script>
 //<![CDATA[
 window.addEventListener("load", function(){ outline([0,-515484383,0,[0,2],[0,"nav",[0,"aside",0]],"overview",0]); }, false); 
 //]]>
 </script><h2> Generating HTML for Eliom applications</h2><h3> The TyXML library vs. the DOM API</h3><p>On client side there are two kinds of HTML representations: one is
-based on the <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.1.0/manual/intro">TyXML library</a></span> and the other
+based on the <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.3.0/manual/intro">TyXML library</a></span> and the other
 one is the browser DOM tree accessible through Js_of_ocaml modules
 <span><a class="ocsforge_doclink_js_of_ocaml" href="/js_of_ocaml/3.1.0/api/Dom">Dom</a></span> and <span><a class="ocsforge_doclink_js_of_ocaml" href="/js_of_ocaml/3.1.0/api/Dom_html">Dom_html</a></span>. The TyXML representation is
 a OCaml immutable typed tree. The DOM tree is mutable structure
@@ -411,7 +411,7 @@ code is accepted but not valid regarding HTML5 standard (because
 </p><pre class=""><code class="language-ocaml translatable">&lt;&lt; &lt;html&gt;
      &lt;head&gt;&lt;/head&gt;
      &lt;body&gt;&lt;h1&gt;plop&lt;/h1&gt;&lt;/body&gt;
-   &lt;/html&gt; &gt;&gt;</code></pre><p>We recommend you use the functions from <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.1.0/api/Eliom_content.Html5.D">Eliom_content.​Html5.​D</a></span>, as you will (almost) always get valid
+   &lt;/html&gt; &gt;&gt;</code></pre><p>We recommend you use the functions from <span><a class="ocsforge_doclink_tyxml" href="/tyxml/4.3.0/api/Eliom_content.Html5.D">Eliom_content.​Html5.​D</a></span>, as you will (almost) always get valid
 HTML5. Use the syntax extension for example to enclose already created
 pieces of HTML, and check your pages validity with the
 <a href="http://validator.w3.org/" class="ocsimore_phrasing_link"> W3C validator</a>.
