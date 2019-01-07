@@ -1,107 +1,126 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title> Writing service handlers</title><meta charset="utf8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link rel="stylesheet" href="/css/style.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-ocaml.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-clike.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-reason.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-javascript.min.js"></script><script src="/js/client.js"></script></head><body class="eliom 2.2.2 outputs"><div class="project-page"><div class="page-header"><p class="logo-ocsigen"><a href="/" class="ocsimore_phrasing_link"><img src="/img/ocsigen-white.svg" alt="Ocsigen"/></a>
-</p><p class="logo-subproject">Eliom
-</p><ul class="mainmenu"><li class="mainmenu-home"><a href="/" class="ocsimore_phrasing_link">Home</a>
-</li><li class="mainmenu-doc"><a href="/tuto/6.2/manual/intro" class="ocsimore_phrasing_link">Doc</a>
-</li><li class="mainmenu-current"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
-</li><li><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
-</li><li><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
-</li><li><a href="/tyxml/4.3.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
-</li><li><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
-</li></ul><aside class="how-drawer"><input id="how-drawer-toggle" type="checkbox"/><label for="how-drawer-toggle" id="how-drawer-label"><span class="how-drawer-icon"></span></label><nav class="how-drawer-content"><ul class="drawermainmenu"><li class="drawermainmenu-home"><a href="/" class="ocsimore_phrasing_link">Home</a>
-</li><li class="drawermainmenu-doc"><a href="/tuto/6.2/manual/intro" class="ocsimore_phrasing_link">Doc</a>
-</li><li class="drawermainmenu-current drawermainmenu-project"><a href="/eliom/6.3/manual/intro" class="ocsimore_phrasing_link">Eliom</a>
-</li><li class="drawermainmenu-project"><a href="/js_of_ocaml/3.1.0/manual/overview" class="ocsimore_phrasing_link">Js_of_ocaml</a>
-</li><li class="drawermainmenu-project"><a href="/ocsigenserver/2.9/manual/quickstart" class="ocsimore_phrasing_link">Server</a>
-</li><li class="drawermainmenu-project"><a href="/lwt/4.1.0/manual/manual" class="ocsimore_phrasing_link">Lwt</a>
-</li><li class="drawermainmenu-project"><a href="/tyxml/4.3.0/manual/intro" class="ocsimore_phrasing_link">Tyxml</a>
-</li><li class="drawermainmenu-project"><a href="/ocsigen-toolkit/1.1.0/manual/intro" class="ocsimore_phrasing_link">Toolkit</a>
-</li><li class="drawermainmenu-project"><a href="/ocsigen-start/1.1.0/manual/intro" class="ocsimore_phrasing_link">Start</a>
-</li><li class="drawermainmenu-page"><a href="/projects" class="ocsimore_phrasing_link">Other projects</a>
-</li><li class="drawermainmenu-page"><a href="/papers" class="ocsimore_phrasing_link">Research papers</a>
-</li><li class="drawermainmenu-page"><a href="/credits" class="ocsimore_phrasing_link">Who does Ocsigen?</a>
-</li><li class="drawermainmenu-page"><a href="/blog" class="ocsimore_phrasing_link">Blog</a>
-</li><li class="drawermainmenu-page"><a href="https://github.com/ocsigen" class="ocsimore_phrasing_link">Source code</a>
-</li></ul><nav class="how-doctree"><h1>Eliom's Reference manual</h1><h2><a href="/eliom/2.2.2/manual/intro" class="ocsimore_phrasing_link">Introduction</a></h2><h2>Server side concepts</h2><h3>Services</h3><h4><a href="/eliom/2.2.2/manual/services" class="ocsimore_phrasing_link">The different types of services</a></h4><h4><a href="/eliom/2.2.2/manual/params" class="ocsimore_phrasing_link">Typing service parameters</a></h4><h4><a href="/eliom/2.2.2/manual/outputs" class="ocsimore_phrasing_link">Writing service handlers</a></h4><h4><a href="/eliom/2.2.2/manual/links" class="ocsimore_phrasing_link">Creating links and forms</a></h4><h3><a href="/eliom/2.2.2/manual/state" class="ocsimore_phrasing_link">Sessions and server side state</a></h3><h3><a href="/eliom/2.2.2/manual/config" class="ocsimore_phrasing_link">Configuring and running Eliom</a></h3><h2>Client-server application</h2><h3><a href="/eliom/2.2.2/manual/client" class="ocsimore_phrasing_link">Applications</a></h3><h3><a href="/eliom/2.2.2/manual/client-communication" class="ocsimore_phrasing_link">Client/server communication</a></h3><h3><a href="/eliom/2.2.2/manual/client-compiling" class="ocsimore_phrasing_link">Compilation process</a></h3><h2>Miscellaneous</h2><h3><a href="/eliom/2.2.2/manual/html" class="ocsimore_phrasing_link">Writing HTML</a></h3><h3><a href="/eliom/2.2.2/manual/security" class="ocsimore_phrasing_link">Security considerations</a></h3><h3><a href="/eliom/2.2.2/manual/wrapping" class="ocsimore_phrasing_link">Custom wrapping</a></h3><h3><a href="/eliom/2.2.2/manual/examples" class="ocsimore_phrasing_link">Examples</a></h3><h1>Server API</h1><h2><a href="/eliom/2.2.2/api/server/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_common" class="ocsimore_phrasing_link">Eliom_common</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_config" class="ocsimore_phrasing_link">Eliom_config</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_request_info" class="ocsimore_phrasing_link">Eliom_request_info</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_reference" class="ocsimore_phrasing_link">Eliom_reference</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_state" class="ocsimore_phrasing_link">Eliom_state</a></h2><h2>Content and form creation</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Xhtml" class="ocsimore_phrasing_link">Eliom_content.Xhtml</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Services creation</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_parameter" class="ocsimore_phrasing_link">Eliom_parameter</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration" class="ocsimore_phrasing_link">Eliom_registration</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.Html5" class="ocsimore_phrasing_link">Eliom_registration.Html5</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.Action" class="ocsimore_phrasing_link">Eliom_registration.Action</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.Ocaml" class="ocsimore_phrasing_link">Eliom_registration.Ocaml</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.App" class="ocsimore_phrasing_link">Eliom_registration.App</a></h3><h2>Client/server communication</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_react" class="ocsimore_phrasing_link">Eliom_react</a></h3><h2>Extensions</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_atom" class="ocsimore_phrasing_link">Eliom_atom</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_openid" class="ocsimore_phrasing_link">Eliom_openid</a></h3><h2>Index</h2><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_types">Index of types</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_values">Index of values</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_modules">Index of modules</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_module_types">Index of module types</a></span></h3><h1>Eliom client API</h1><h2><a href="/eliom/2.2.2/api/client/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href="/eliom/2.2.2/api/client/Eliom_client" class="ocsimore_phrasing_link">Eliom_client</a></h2><h2>Content and form creation</h2><h3><a href="/eliom/2.2.2/api/client/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Client/server communication</h2><h3><a href="/eliom/2.2.2/api/client/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h2>Index</h2><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_types">Index of types</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_values">Index of values</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_modules">Index of modules</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_module_types">Index of module types</a></span></h3></nav></nav></aside></div><p class="reasonwarning">Warning: Reason support is experimental.
-We are looking for beta-tester and contributors.
-</p><button id="reason">Switch to </button><div class="twocols"><nav class="leftcol">Version <select class="how-versions" onchange="location = this.value;"><option value="/eliom/dev/manual/outputs">dev</option><option value="/eliom/6.3/manual/outputs">6.3</option><option value="/eliom/6.2/manual/outputs">6.2</option><option value="/eliom/6.1/manual/outputs">6.1</option><option value="/eliom/6.0/manual/outputs">6.0</option><option value="/eliom/5.0/manual/outputs">5.0</option><option value="/eliom/4.2/manual/outputs">4.2</option><option value="/eliom/4.1/manual/outputs">4.1</option><option value="/eliom/4.0/manual/outputs">4.0</option><option value="/eliom/3.0/manual/outputs">3.0</option><option selected="selected">2.2.2</option><option value="/eliom/2.1.1/manual/outputs">2.1.1</option><option value="/eliom/2.0.2/manual/outputs">2.0.2</option><option value="/eliom/2.0.1/manual/outputs">2.0.1</option><option value="/eliom/2.0/manual/outputs">2.0</option><option value="/eliom/1.3.4/manual/outputs">1.3.4</option><option value="/eliom/1.2.2/manual/outputs">1.2.2</option><option value="/eliom/1.1.0/manual/outputs">1.1.0</option></select><form id="search"><input name="q" id="q" placeholder="search ..."/><button>Search</button></form><nav class="how-doctree"><h1>Eliom's Reference manual</h1><h2><a href="/eliom/2.2.2/manual/intro" class="ocsimore_phrasing_link">Introduction</a></h2><h2>Server side concepts</h2><h3>Services</h3><h4><a href="/eliom/2.2.2/manual/services" class="ocsimore_phrasing_link">The different types of services</a></h4><h4><a href="/eliom/2.2.2/manual/params" class="ocsimore_phrasing_link">Typing service parameters</a></h4><h4><a href="/eliom/2.2.2/manual/outputs" class="ocsimore_phrasing_link">Writing service handlers</a></h4><h4><a href="/eliom/2.2.2/manual/links" class="ocsimore_phrasing_link">Creating links and forms</a></h4><h3><a href="/eliom/2.2.2/manual/state" class="ocsimore_phrasing_link">Sessions and server side state</a></h3><h3><a href="/eliom/2.2.2/manual/config" class="ocsimore_phrasing_link">Configuring and running Eliom</a></h3><h2>Client-server application</h2><h3><a href="/eliom/2.2.2/manual/client" class="ocsimore_phrasing_link">Applications</a></h3><h3><a href="/eliom/2.2.2/manual/client-communication" class="ocsimore_phrasing_link">Client/server communication</a></h3><h3><a href="/eliom/2.2.2/manual/client-compiling" class="ocsimore_phrasing_link">Compilation process</a></h3><h2>Miscellaneous</h2><h3><a href="/eliom/2.2.2/manual/html" class="ocsimore_phrasing_link">Writing HTML</a></h3><h3><a href="/eliom/2.2.2/manual/security" class="ocsimore_phrasing_link">Security considerations</a></h3><h3><a href="/eliom/2.2.2/manual/wrapping" class="ocsimore_phrasing_link">Custom wrapping</a></h3><h3><a href="/eliom/2.2.2/manual/examples" class="ocsimore_phrasing_link">Examples</a></h3><h1>Server API</h1><h2><a href="/eliom/2.2.2/api/server/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_common" class="ocsimore_phrasing_link">Eliom_common</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_config" class="ocsimore_phrasing_link">Eliom_config</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_request_info" class="ocsimore_phrasing_link">Eliom_request_info</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_reference" class="ocsimore_phrasing_link">Eliom_reference</a></h2><h2><a href="/eliom/2.2.2/api/server/Eliom_state" class="ocsimore_phrasing_link">Eliom_state</a></h2><h2>Content and form creation</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Xhtml" class="ocsimore_phrasing_link">Eliom_content.Xhtml</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Services creation</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_parameter" class="ocsimore_phrasing_link">Eliom_parameter</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration" class="ocsimore_phrasing_link">Eliom_registration</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.Html5" class="ocsimore_phrasing_link">Eliom_registration.Html5</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.Action" class="ocsimore_phrasing_link">Eliom_registration.Action</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.Ocaml" class="ocsimore_phrasing_link">Eliom_registration.Ocaml</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_registration.App" class="ocsimore_phrasing_link">Eliom_registration.App</a></h3><h2>Client/server communication</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_react" class="ocsimore_phrasing_link">Eliom_react</a></h3><h2>Extensions</h2><h3><a href="/eliom/2.2.2/api/server/Eliom_atom" class="ocsimore_phrasing_link">Eliom_atom</a></h3><h3><a href="/eliom/2.2.2/api/server/Eliom_openid" class="ocsimore_phrasing_link">Eliom_openid</a></h3><h2>Index</h2><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_types">Index of types</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_values">Index of values</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_modules">Index of modules</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/index_module_types">Index of module types</a></span></h3><h1>Eliom client API</h1><h2><a href="/eliom/2.2.2/api/client/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href="/eliom/2.2.2/api/client/Eliom_client" class="ocsimore_phrasing_link">Eliom_client</a></h2><h2>Content and form creation</h2><h3><a href="/eliom/2.2.2/api/client/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Client/server communication</h2><h3><a href="/eliom/2.2.2/api/client/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href="/eliom/2.2.2/api/client/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h2>Index</h2><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_types">Index of types</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_values">Index of values</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_modules">Index of modules</a></span></h3><h3> <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/index_module_types">Index of module types</a></span></h3></nav></nav><article class="rightcol"><h1> Writing service handlers</h1><nav id="overview" class="ocsimore_outline"><header><h1>Table of contents</h1></header></nav><script>
+<html><head><title> Writing service handlers</title><meta charset="utf8"/><link rel="stylesheet" href="https://ocsigen.org/eliom/tmp/style.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css"/><script type="text/javascript" src="https://ocsigen.org/js/client.js">
 //<![CDATA[
-window.addEventListener("load", function(){ outline([0,-515484383,0,[0,2],[0,"nav",[0,"aside",0]],"overview",0]); }, false); 
+
 //]]>
-</script><div class="paragraph"><p>Many kind of outputs modules</p></div><p>Once the <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#classification">service identification mechanism</a></span> identified the service responsible
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-core.min.js">
+//<![CDATA[
+
+//]]>
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-ocaml.min.js">
+//<![CDATA[
+
+//]]>
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-clike.min.js">
+//<![CDATA[
+
+//]]>
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-reason.min.js">
+//<![CDATA[
+
+//]]>
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-javascript.min.js">
+//<![CDATA[
+
+//]]>
+</script></head><body><div class="project-page"><div class="page-header"><p class="logo-ocsigen"><a href=".././../../" class="ocsimore_phrasing_link"><img src=".././../../img/ocsigen-white.svg" alt="Ocsigen"/></a>
+</p><p class="logo-subproject">Eliom</p><div class="mainmenu"><p><span class="mainmenu-home"><a href=".././../../" class="ocsimore_phrasing_link">Home</a></span>
+<span class="mainmenu-doc"><a href=".././../../tuto/" class="ocsimore_phrasing_link">Doc</a></span>
+</p><p class="mainmenu-current"><a href=".././../../eliom/" class="ocsimore_phrasing_link">Eliom</a></p><p><a href=".././../../js_of_ocaml/" class="ocsimore_phrasing_link">Js_of_ocaml</a></p><p><a href=".././../../lwt/" class="ocsimore_phrasing_link">Lwt</a></p><p><a href=".././../../tyxml/" class="ocsimore_phrasing_link">Tyxml</a></p><p><a href=".././../../ocsigen-start/" class="ocsimore_phrasing_link">Start</a></p></div><form id="googlesearch" action="https://google.com/search"><input name="q" id="gsearch-box" placeholder="Search using Google"/><label for="gsearch-box"><img src="https://ocsigen.org/eliom/tmp/search.svg" alt="" id="gsearch-icon"/></label><input type="submit" id="gsearch-submit" onclick="document.getElementById('gsearch-box').value += ' site:ocsigen.org';"/></form><aside class="how-drawer"><input id="how-drawer-toggle" type="checkbox"/><label for="how-drawer-toggle" id="how-drawer-label"><span class="how-drawer-icon"></span></label><nav class="how-drawer-content"><ul class="drawermainmenu"><li class="drawermainmenu-home"><a href=".././../../" class="ocsimore_phrasing_link">Home</a>
+</li><li class="drawermainmenu-doc"><a href=".././../../tuto/" class="ocsimore_phrasing_link">Doc</a>
+</li><li class="drawermainmenu-project"><a href=".././../../eliom/" class="ocsimore_phrasing_link">Eliom</a>
+</li><li class="drawermainmenu-project"><a href=".././../../js_of_ocaml/" class="ocsimore_phrasing_link">Js_of_ocaml</a>
+</li><li class="drawermainmenu-project"><a href=".././../../ocsigenserver/" class="ocsimore_phrasing_link">Server</a>
+</li><li class="drawermainmenu-project"><a href=".././../../lwt/" class="ocsimore_phrasing_link">Lwt</a>
+</li><li class="drawermainmenu-project"><a href=".././../../tyxml/" class="ocsimore_phrasing_link">Tyxml</a>
+</li><li class="drawermainmenu-project"><a href=".././../../ocsigen-toolkit/" class="ocsimore_phrasing_link">Toolkit</a>
+</li><li class="drawermainmenu-project"><a href=".././../../ocsigen-start/" class="ocsimore_phrasing_link">Start</a>
+</li><li class="drawermainmenu-page"><a href=".././../../projects" class="ocsimore_phrasing_link">Other projects</a>
+</li><li class="drawermainmenu-page"><a href=".././../../papers" class="ocsimore_phrasing_link">Research papers</a>
+</li><li class="drawermainmenu-page"><a href=".././../../credits" class="ocsimore_phrasing_link">Who does Ocsigen?</a>
+</li><li class="drawermainmenu-page"><a href=".././../../blog" class="ocsimore_phrasing_link">Blog</a>
+</li><li class="drawermainmenu-page"><a href="https://github.com/ocsigen" class="ocsimore_phrasing_link">Source code</a>
+</li></ul><nav class="how-doctree"><h1>Eliom's Reference manual</h1><h2><a href="intro" class="ocsimore_phrasing_link">Introduction</a></h2><h2>Server side concepts</h2><h3>Services</h3><h4><a href="services" class="ocsimore_phrasing_link">The different types of services</a></h4><h4><a href="params" class="ocsimore_phrasing_link">Typing service parameters</a></h4><h4><a href="outputs" class="ocsimore_phrasing_link">Writing service handlers</a></h4><h4><a href="links" class="ocsimore_phrasing_link">Creating links and forms</a></h4><h3><a href="state" class="ocsimore_phrasing_link">Sessions and server side state</a></h3><h3><a href="config" class="ocsimore_phrasing_link">Configuring and running Eliom</a></h3><h2>Client-server application</h2><h3><a href="client" class="ocsimore_phrasing_link">Applications</a></h3><h3><a href="client-communication" class="ocsimore_phrasing_link">Client/server communication</a></h3><h3><a href="client-compiling" class="ocsimore_phrasing_link">Compilation process</a></h3><h2>Miscellaneous</h2><h3><a href="html" class="ocsimore_phrasing_link">Writing HTML</a></h3><h3><a href="security" class="ocsimore_phrasing_link">Security considerations</a></h3><h3><a href="wrapping" class="ocsimore_phrasing_link">Custom wrapping</a></h3><h3><a href="examples" class="ocsimore_phrasing_link">Examples</a></h3><h1>Server API</h1><h2><a href=".././api/server/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href=".././api/server/Eliom_common" class="ocsimore_phrasing_link">Eliom_common</a></h2><h2><a href=".././api/server/Eliom_config" class="ocsimore_phrasing_link">Eliom_config</a></h2><h2><a href=".././api/server/Eliom_request_info" class="ocsimore_phrasing_link">Eliom_request_info</a></h2><h2><a href=".././api/server/Eliom_reference" class="ocsimore_phrasing_link">Eliom_reference</a></h2><h2><a href=".././api/server/Eliom_state" class="ocsimore_phrasing_link">Eliom_state</a></h2><h2>Content and form creation</h2><h3><a href=".././api/server/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href=".././api/server/Eliom_content.Xhtml" class="ocsimore_phrasing_link">Eliom_content.Xhtml</a></h3><h3><a href=".././api/server/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href=".././api/server/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Services creation</h2><h3><a href=".././api/server/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href=".././api/server/Eliom_parameter" class="ocsimore_phrasing_link">Eliom_parameter</a></h3><h3><a href=".././api/server/Eliom_registration" class="ocsimore_phrasing_link">Eliom_registration</a></h3><h3><a href=".././api/server/Eliom_registration.Html5" class="ocsimore_phrasing_link">Eliom_registration.Html5</a></h3><h3><a href=".././api/server/Eliom_registration.Action" class="ocsimore_phrasing_link">Eliom_registration.Action</a></h3><h3><a href=".././api/server/Eliom_registration.Ocaml" class="ocsimore_phrasing_link">Eliom_registration.Ocaml</a></h3><h3><a href=".././api/server/Eliom_registration.App" class="ocsimore_phrasing_link">Eliom_registration.App</a></h3><h2>Client/server communication</h2><h3><a href=".././api/server/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href=".././api/server/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h3><a href=".././api/server/Eliom_react" class="ocsimore_phrasing_link">Eliom_react</a></h3><h2>Extensions</h2><h3><a href=".././api/server/Eliom_atom" class="ocsimore_phrasing_link">Eliom_atom</a></h3><h3><a href=".././api/server/Eliom_openid" class="ocsimore_phrasing_link">Eliom_openid</a></h3><h2>Index</h2><h3> <span><a href=".././api/server/index_types">Index of types</a></span></h3><h3> <span><a href=".././api/server/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a href=".././api/server/index_values">Index of values</a></span></h3><h3> <span><a href=".././api/server/index_modules">Index of modules</a></span></h3><h3> <span><a href=".././api/server/index_module_types">Index of module types</a></span></h3><h1>Eliom client API</h1><h2><a href=".././api/client/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href=".././api/client/Eliom_client" class="ocsimore_phrasing_link">Eliom_client</a></h2><h2>Content and form creation</h2><h3><a href=".././api/client/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href=".././api/client/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href=".././api/client/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Client/server communication</h2><h3><a href=".././api/client/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href=".././api/client/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href=".././api/client/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h2>Index</h2><h3> <span><a href=".././api/client/index_types">Index of types</a></span></h3><h3> <span><a href=".././api/client/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a href=".././api/client/index_values">Index of values</a></span></h3><h3> <span><a href=".././api/client/index_modules">Index of modules</a></span></h3><h3> <span><a href=".././api/client/index_module_types">Index of module types</a></span></h3></nav></nav></aside></div><p class="reasonwarning">Warning: Reason support is experimental.
+We are looking for beta-tester and contributors.
+</p><button id="reason">Switch to </button><div class="twocols"><nav class="leftcol">Version <select class="how-versions" onchange="location = this.value;"><option value=".././../1.1.0/manual/outputs">1.1.0</option><option value=".././../1.2.2/manual/outputs">1.2.2</option><option value=".././../1.3.4/manual/outputs">1.3.4</option><option value=".././../2.0/manual/outputs">2.0</option><option value=".././../2.0.1/manual/outputs">2.0.1</option><option value=".././../2.0.2/manual/outputs">2.0.2</option><option value=".././../2.1.1/manual/outputs">2.1.1</option><option value=".././../2.2.2/manual/outputs" selected="selected">2.2.2</option><option value=".././../3.0/manual/outputs">3.0</option><option value=".././../4.0/manual/outputs">4.0</option><option value=".././../4.1/manual/outputs">4.1</option><option value=".././../4.2/manual/outputs">4.2</option><option value=".././../5.0/manual/outputs">5.0</option><option value=".././../6.0/manual/outputs">6.0</option><option value=".././../6.1/manual/outputs">6.1</option><option value=".././../6.2/manual/outputs">6.2</option><option value=".././../6.3/manual/outputs">6.3</option><option value=".././../dev/manual/outputs">dev</option></select><nav class="how-doctree"><h1>Eliom's Reference manual</h1><h2><a href="intro" class="ocsimore_phrasing_link">Introduction</a></h2><h2>Server side concepts</h2><h3>Services</h3><h4><a href="services" class="ocsimore_phrasing_link">The different types of services</a></h4><h4><a href="params" class="ocsimore_phrasing_link">Typing service parameters</a></h4><h4><a href="outputs" class="ocsimore_phrasing_link">Writing service handlers</a></h4><h4><a href="links" class="ocsimore_phrasing_link">Creating links and forms</a></h4><h3><a href="state" class="ocsimore_phrasing_link">Sessions and server side state</a></h3><h3><a href="config" class="ocsimore_phrasing_link">Configuring and running Eliom</a></h3><h2>Client-server application</h2><h3><a href="client" class="ocsimore_phrasing_link">Applications</a></h3><h3><a href="client-communication" class="ocsimore_phrasing_link">Client/server communication</a></h3><h3><a href="client-compiling" class="ocsimore_phrasing_link">Compilation process</a></h3><h2>Miscellaneous</h2><h3><a href="html" class="ocsimore_phrasing_link">Writing HTML</a></h3><h3><a href="security" class="ocsimore_phrasing_link">Security considerations</a></h3><h3><a href="wrapping" class="ocsimore_phrasing_link">Custom wrapping</a></h3><h3><a href="examples" class="ocsimore_phrasing_link">Examples</a></h3><h1>Server API</h1><h2><a href=".././api/server/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href=".././api/server/Eliom_common" class="ocsimore_phrasing_link">Eliom_common</a></h2><h2><a href=".././api/server/Eliom_config" class="ocsimore_phrasing_link">Eliom_config</a></h2><h2><a href=".././api/server/Eliom_request_info" class="ocsimore_phrasing_link">Eliom_request_info</a></h2><h2><a href=".././api/server/Eliom_reference" class="ocsimore_phrasing_link">Eliom_reference</a></h2><h2><a href=".././api/server/Eliom_state" class="ocsimore_phrasing_link">Eliom_state</a></h2><h2>Content and form creation</h2><h3><a href=".././api/server/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href=".././api/server/Eliom_content.Xhtml" class="ocsimore_phrasing_link">Eliom_content.Xhtml</a></h3><h3><a href=".././api/server/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href=".././api/server/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Services creation</h2><h3><a href=".././api/server/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href=".././api/server/Eliom_parameter" class="ocsimore_phrasing_link">Eliom_parameter</a></h3><h3><a href=".././api/server/Eliom_registration" class="ocsimore_phrasing_link">Eliom_registration</a></h3><h3><a href=".././api/server/Eliom_registration.Html5" class="ocsimore_phrasing_link">Eliom_registration.Html5</a></h3><h3><a href=".././api/server/Eliom_registration.Action" class="ocsimore_phrasing_link">Eliom_registration.Action</a></h3><h3><a href=".././api/server/Eliom_registration.Ocaml" class="ocsimore_phrasing_link">Eliom_registration.Ocaml</a></h3><h3><a href=".././api/server/Eliom_registration.App" class="ocsimore_phrasing_link">Eliom_registration.App</a></h3><h2>Client/server communication</h2><h3><a href=".././api/server/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href=".././api/server/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h3><a href=".././api/server/Eliom_react" class="ocsimore_phrasing_link">Eliom_react</a></h3><h2>Extensions</h2><h3><a href=".././api/server/Eliom_atom" class="ocsimore_phrasing_link">Eliom_atom</a></h3><h3><a href=".././api/server/Eliom_openid" class="ocsimore_phrasing_link">Eliom_openid</a></h3><h2>Index</h2><h3> <span><a href=".././api/server/index_types">Index of types</a></span></h3><h3> <span><a href=".././api/server/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a href=".././api/server/index_values">Index of values</a></span></h3><h3> <span><a href=".././api/server/index_modules">Index of modules</a></span></h3><h3> <span><a href=".././api/server/index_module_types">Index of module types</a></span></h3><h1>Eliom client API</h1><h2><a href=".././api/client/Eliom_lib" class="ocsimore_phrasing_link">Eliom_lib</a></h2><h2><a href=".././api/client/Eliom_client" class="ocsimore_phrasing_link">Eliom_client</a></h2><h2>Content and form creation</h2><h3><a href=".././api/client/Eliom_content.Html5" class="ocsimore_phrasing_link">Eliom_content.Html5</a></h3><h3><a href=".././api/client/Eliom_content.Svg" class="ocsimore_phrasing_link">Eliom_content.Svg</a></h3><h3><a href=".././api/client/Eliom_content.Xml" class="ocsimore_phrasing_link">Eliom_content.Xml</a></h3><h2>Client/server communication</h2><h3><a href=".././api/client/Eliom_service" class="ocsimore_phrasing_link">Eliom_service</a></h3><h3><a href=".././api/client/Eliom_bus" class="ocsimore_phrasing_link">Eliom_bus</a></h3><h3><a href=".././api/client/Eliom_comet" class="ocsimore_phrasing_link">Eliom_comet</a></h3><h2>Index</h2><h3> <span><a href=".././api/client/index_types">Index of types</a></span></h3><h3> <span><a href=".././api/client/index_exceptions">Index of exceptions</a></span></h3><h3> <span><a href=".././api/client/index_values">Index of values</a></span></h3><h3> <span><a href=".././api/client/index_modules">Index of modules</a></span></h3><h3> <span><a href=".././api/client/index_module_types">Index of module types</a></span></h3></nav></nav><article class="rightcol"><h1> Writing service handlers</h1><div id="overview" class="ocsimore_outline"><header><h1>Table of contents</h1></header></div><script>
+//<![CDATA[
+window.addEventListener("load", function(){ outline([0,-515484383,0,[0,2],[0,"nav",[0,"aside",0]],"overview",1]); }, false); 
+//]]>
+</script><div class="paragraph"><p>Many kind of outputs modules</p></div><p>Once the <span><a href=".././manual/services#classification">
+service identification mechanism</a></span> identified the service responsible
 for a given URL it executes its service handler. The service handler
 is a function taking the GET and POST parameters as argument and
 returning the content to be sent to the client. The return type of the
 service handler depends on the function used to register it. On the
 most common case its HTML5 contents build with the TyXML library, but
 Eliom provides a lot of outputs modules to ease the implementation of
-common web interaction. See section <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/outputs#predefined_outputs">Predefined output modules </a></span> for a
+common web interaction. See section <span><a href=".././manual/outputs#predefined_outputs"> Predefined output modules </a></span> for a
 comprehensive list.
 </p><div class="paragraph"><p>Cooperative service handler</p></div><p>As Ocsigenserver, Eliom is based on cooperative threading library and
 service handler must written your in a cooperative way. See section
-<span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/outputs#lwt">Writing cooperative
+<span><a href=".././manual/outputs#lwt"> Writing cooperative
 service handlers with Lwt </a></span> for some examples.
-</p><div class="paragraph"><p>Error handling</p></div><p>See section <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/outputs#error_handling">Error handling</a></span>.
+</p><div class="paragraph"><p>Error handling</p></div><p>See section <span><a href=".././manual/outputs#error_handling">
+Error handling</a></span>.
 </p><h2 id="predefined_outputs"> Predefined output modules <a class="backref" href="#predefined_outputs">&#182;</a></h2><h3> List of predefined output modules</h3><aside class="wip"><header><h5>Work in progress</h5></header><p>Add types and options for each module?</p></aside><p>Services can send several types of data, using a variety of predefined modules.
-It is also possible to <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/outputs#creating">create your own output modules</a></span>.
+It is also possible to <span><a href=".././manual/outputs#creating">create your own output modules</a></span>.
 The main predefined output modules are:
-</p><div class="paragraph"><p>Generating content for the browser</p></div><dl><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Html5">Eliom_registration.​Html5</a></span> (and <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Xhtml">Eliom_registration.​Xhtml</a></span>)
+</p><div class="paragraph"><p>Generating content for the browser</p></div><dl><dt><span><a href=".././api/server/Eliom_registration.Html5">Eliom_registration.Html5</a></span> (and <span><a href=".././api/server/Eliom_registration.Xhtml">Eliom_registration.Xhtml</a></span>)
 </dt><dd> Allows to register functions that generate html5 pages statically checked
-using polymorphic variant types. You may use constructor functions from <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_content.Html5.D">Eliom_content.​Html5.​D</a></span> (resp <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_content.Xhtml.D">Eliom_content.​Xhtml.​D</a></span>) or a syntax extension close to the standard html syntax.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Flow5">Eliom_registration.​Flow5</a></span> (and <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Block">Eliom_registration.​Block</a></span>)
-</dt><dd> Allows to register functions that generate a portion of page using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_content.Html5.F">Eliom_content.​Html5.​F</a></span> (resp <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_content.Xhtml.F">Eliom_content.​Xhtml.​F</a></span>) or the syntax extension. (useful for <span class="code">XMLHttpRequest</span> requests for example). Do not use with Eliom application: use <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Ocaml">Eliom_registration.​Ocaml</a></span> instead.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_duce.Xhtml">Eliom_duce.​Xhtml</a></span>
+using polymorphic variant types. You may use constructor functions from <span><a href=".././api/server/Eliom_content.Html5.D">Eliom_content.Html5.D</a></span> (resp <span><a href=".././api/server/Eliom_content.Xhtml.D">Eliom_content.Xhtml.D</a></span>) or a syntax extension close to the standard html syntax.
+</dd><dt><span><a href=".././api/server/Eliom_registration.Flow5">Eliom_registration.Flow5</a></span> (and <span><a href=".././api/server/Eliom_registration.Block">Eliom_registration.Block</a></span>)
+</dt><dd> Allows to register functions that generate a portion of page using <span><a href=".././api/server/Eliom_content.Html5.F">Eliom_content.Html5.F</a></span> (resp <span><a href=".././api/server/Eliom_content.Xhtml.F">Eliom_content.Xhtml.F</a></span>) or the syntax extension. (useful for <span class="code">XMLHttpRequest</span> requests for example). Do not use with Eliom application: use <span><a href=".././api/server/Eliom_registration.Ocaml">Eliom_registration.Ocaml</a></span> instead.
+</dd><dt><span><a href=".././api/server/Eliom_duce.Xhtml">Eliom_duce.Xhtml</a></span>
 </dt><dd> Allows to register functions that generate XHTML 1.1 pages   statically checked using <span class="code">OCamlduce</span>. Typing is   stricter, and you need a modified version of the OCaml compiler   (OCamlduce).
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.HtmlText">Eliom_registration.​HtmlText</a></span>
+</dd><dt><span><a href=".././api/server/Eliom_registration.HtmlText">Eliom_registration.HtmlText</a></span>
 </dt><dd> Allows to register functions that   generate text html pages, without any typechecking of the content. The content type sent by the server is &quot;text/html&quot;.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.CssText">Eliom_registration.​CssText</a></span>
+</dd><dt><span><a href=".././api/server/Eliom_registration.CssText">Eliom_registration.CssText</a></span>
 </dt><dd> Allows to register functions that   generate CSS pages, without any typechecking of the content. The content type sent by the server is &quot;<span class="teletype">text/css</span>&quot;.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.String">Eliom_registration.​String</a></span>
+</dd><dt><span><a href=".././api/server/Eliom_registration.String">Eliom_registration.String</a></span>
 </dt><dd> Allows to register functions that   generate text pages, without any typechecking of the content. The services return a pair of strings. The first one is the content   of the page, the second one is the content type.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.File">Eliom_registration.​File</a></span>
-</dt><dd> Allows to register services that send files. See <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#eliomfiles">here</a></span> for an example of use.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Streamlist">Eliom_registration.​Streamlist</a></span>
+</dd><dt><span><a href=".././api/server/Eliom_registration.File">Eliom_registration.File</a></span>
+</dt><dd> Allows to register services that send files. See <span><a href=".././manual/services#eliomfiles">here</a></span> for an example of use.
+</dd><dt><span><a href=".././api/server/Eliom_registration.Streamlist">Eliom_registration.Streamlist</a></span>
 </dt><dd> Allows to register services that send &quot;byte&quot; contents. It is used when big contents (that does not fit in memory) is generated.
-</dd></dl><div class="paragraph"><p>Generating content for client-server applications</p></div><dl><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.App">Eliom_registration.​App</a></span>
-</dt><dd> is a functor that generates a module allowing to create services belonging to a client-server Eliom application (see <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/client">chapter client-server applications</a></span>)
-</dd></dl><div class="paragraph"><p>Special browser interraction</p></div><dl><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Action">Eliom_registration.​Action</a></span>
-</dt><dd> Allows to register actions (functions that do not generate any page, see <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#actions">Action</a></span>). The page corresponding to the URL (without the coservice parameter that triggered the action) is reloaded after the action by default if possible.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Unit">Eliom_registration.​Unit</a></span>
-</dt><dd> is like <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Action">Eliom_registration.​Action</a></span> but the URL is not reloaded after the action. (Same as <span class="teletype">Eliom_registration.Action</span> with <span class="teletype">[`NoReload]</span> option).
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Redirection">Eliom_registration.​Redirection</a></span>
+</dd></dl><div class="paragraph"><p>Generating content for client-server applications</p></div><dl><dt><span><a href=".././api/server/Eliom_registration.App">Eliom_registration.App</a></span>
+</dt><dd> is a functor that generates a module allowing to create services belonging to a client-server Eliom application (see <span><a href=".././manual/client">chapter client-server applications</a></span>)
+</dd></dl><div class="paragraph"><p>Special browser interraction</p></div><dl><dt><span><a href=".././api/server/Eliom_registration.Action">Eliom_registration.Action</a></span>
+</dt><dd> Allows to register actions (functions that do not generate any page, see <span><a href=".././manual/services#actions">Action</a></span>). The page corresponding to the URL (without the coservice parameter that triggered the action) is reloaded after the action by default if possible.
+</dd><dt><span><a href=".././api/server/Eliom_registration.Unit">Eliom_registration.Unit</a></span>
+</dt><dd> is like <span><a href=".././api/server/Eliom_registration.Action">Eliom_registration.Action</a></span> but the URL is not reloaded after the action. (Same as <span class="teletype">Eliom_registration.Action</span> with <span class="teletype">[`NoReload]</span> option).
+</dd><dt><span><a href=".././api/server/Eliom_registration.Redirection">Eliom_registration.Redirection</a></span>
 </dt><dd> Allows to register HTTP redirections. The handler returns the service (without parameter) of the page you want to redirect to. The browser will get a 301 or 307 code in answer and redo the request to the new URL. To specify whether you want temporary (307) or permanent (301) redirections, use the <span class="code">?options</span> parameter of registration functions. For example: <span class="code">register options:`Permanent ...</span> or <span class="code">register options:`Temporary ...</span>.
-</dd><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.String_redirection">Eliom_registration.​String_redirection</a></span>
+</dd><dt><span><a href=".././api/server/Eliom_registration.String_redirection">Eliom_registration.String_redirection</a></span>
 </dt><dd> Same but the ouput type is a string. Use with care! Warning: According to the RFC of the HTTP protocol, the URL must be absolute!
-</dd></dl><div class="paragraph"><p>Customization of other outputs</p></div><dl><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Customize">Eliom_registration.​Customize</a></span>
+</dd></dl><div class="paragraph"><p>Customization of other outputs</p></div><dl><dt><span><a href=".././api/server/Eliom_registration.Customize">Eliom_registration.Customize</a></span>
 </dt><dd> Allows to specialize service registration functions by customizing the page type.
-</dd></dl><div class="paragraph"><p>Sending caml values to client side code</p></div><dl><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Ocaml">Eliom_registration.​Ocaml</a></span>
+</dd></dl><div class="paragraph"><p>Sending caml values to client side code</p></div><dl><dt><span><a href=".././api/server/Eliom_registration.Ocaml">Eliom_registration.Ocaml</a></span>
 </dt><dd> allows to register services sending marshalled OCaml values. See the section on
-<span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/client#communication">communications in the chapter about client-server applications</a></span>
-</dd></dl><div class="paragraph"><p>Runtime choice of content</p></div><dl><dt><span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Any">Eliom_registration.​Any</a></span>
-</dt><dd> Allows to register services that can choose what they send, for example an xhtml page or a file, depending on some situation (parameter, user logged or not, page present in a cache ...). It is also possible to create your own modules for other types of pages. See <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#any">here</a></span> for an example of use.
-</dd></dl><h3> Specific output modules</h3><nav id="overview" class="ocsimore_outline"></nav><script>
+<span><a href=".././manual/client#communication">communications in the chapter about client-server applications</a></span>
+</dd></dl><div class="paragraph"><p>Runtime choice of content</p></div><dl><dt><span><a href=".././api/server/Eliom_registration.Any">Eliom_registration.Any</a></span>
+</dt><dd> Allows to register services that can choose what they send, for example an xhtml page or a file, depending on some situation (parameter, user logged or not, page present in a cache ...). It is also possible to create your own modules for other types of pages. See <span><a href=".././manual/services#any">here</a></span> for an example of use.
+</dd></dl><h3> Specific output modules</h3><div id="overview" class="ocsimore_outline"></div><script>
 //<![CDATA[
-window.addEventListener("load", function(){ outline([0,-515484383,0,[0,2],[0,"nav",[0,"aside",0]],"overview",0]); }, false); 
+window.addEventListener("load", function(){ outline([0,-515484383,0,[0,2],[0,"nav",[0,"aside",0]],"overview",1]); }, false); 
 //]]>
 </script><h4 id="eliomfiles"> Sending files  <a class="backref" href="#eliomfiles">&#182;</a></h4><p>You may want to register a service that will send files.  To do that,
-use the <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.File">Eliom_registration.​File</a></span> module. Example:
+use the <span><a href=".././api/server/Eliom_registration.File">Eliom_registration.File</a></span> module. Example:
 </p><pre class=""><code class="language-ocaml translatable">let sendfile =
   File.register_service
     ~path:[&quot;sendfile&quot;]
     ~get_params:unit
-    (fun () () -&gt; return &quot;filename&quot;)</code></pre><p>Other example, with &quot;suffix&quot; services (see <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/params#suffix">here</a></span>):
+    (fun () () -&gt; return &quot;filename&quot;)</code></pre><p>Other example, with &quot;suffix&quot; services (see <span><a href=".././manual/params#suffix">here</a></span>):
 </p><pre class=""><code class="language-ocaml translatable">let sendfile2 =
   File.register_service
     ~path:[&quot;files&quot;]
     ~get_params:(suffix (all_suffix &quot;filename&quot;))
     (fun s () -&gt;
-      return (&quot;//path//&quot;^(Ocsigen_lib.string_of_url_path ~encode:false s)))</code></pre><p>The extension <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#staticparts">Staticmod</a></span> is another way to
+      return (&quot;//path//&quot;^(Ocsigen_lib.string_of_url_path ~encode:false s)))</code></pre><p>The extension <span><a href=".././manual/services#staticparts">Staticmod</a></span> is another way to
 handle static files.
-</p><h4>Sending portions of pages</h4><p>The <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Flow5">Eliom_registration.​Flow5</a></span> and <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Block">Eliom_registration.​Block</a></span> modules allow you to register services that send portions of pages, of any &quot;block&quot; type for Html5.F (resp. Xhtml.F).
+</p><h4>Sending portions of pages</h4><p>The <span><a href=".././api/server/Eliom_registration.Flow5">Eliom_registration.Flow5</a></span> and <span><a href=".././api/server/Eliom_registration.Block">Eliom_registration.Block</a></span> modules allow you to register services that send portions of pages, of any &quot;block&quot; type for Html5.F (resp. Xhtml.F).
 It is sometimes useful to create AJAX pages
 (i.e. pages using the <span class="code">XMLHttpRequest</span> Javascript object).
 Note that the service returns a list of blocks. For sending HTML
-to client side eliom application, <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Ocaml">Eliom_registration.​Ocaml</a></span> is better
+to client side eliom application, <span><a href=".././api/server/Eliom_registration.Ocaml">Eliom_registration.Ocaml</a></span> is better
 suited.
 </p><pre class=""><code class="language-ocaml translatable">let divpage =
   Eliom_registration.Block.register_service
@@ -110,13 +129,13 @@ suited.
     (fun () () -&gt;
       Lwt.return
         [div [h2 [pcdata &quot;Hallo&quot;];
-              p [pcdata &quot;Blablablabla&quot;] ]])</code></pre><p>The <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Make_typed_xml_registration">Eliom_registration.​Make_typed_xml_registration</a></span> module
+              p [pcdata &quot;Blablablabla&quot;] ]])</code></pre><p>The <span><a href=".././api/server/Eliom_registration.Make_typed_xml_registration">Eliom_registration.Make_typed_xml_registration</a></span> module
 allows to create other modules for registering portions of pages of
-other types.  For example, <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Flow5">Eliom_registration.​Flow5</a></span> is
+other types.  For example, <span><a href=".././api/server/Eliom_registration.Flow5">Eliom_registration.Flow5</a></span> is
 defined by:
 </p><pre class=""><code class="language-ocaml translatable">module Flow5 = Make_typed_xml_registration(Xml)(Html5.F)(struct
   type content = Html5_types.body_content
-end)</code></pre><h4 id="redirections">Redirections <a class="backref" href="#redirections">&#182;</a></h4><h5> Redirections to eliom services</h5><p>The <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Redirection">Eliom_registration.​Redirection</a></span> module allows you to register HTTP redirections.<br/>
+end)</code></pre><h4 id="redirections">Redirections <a class="backref" href="#redirections">&#182;</a></h4><h5> Redirections to eliom services</h5><p>The <span><a href=".././api/server/Eliom_registration.Redirection">Eliom_registration.Redirection</a></span> module allows you to register HTTP redirections.<br/>
 If a request is made for such a service, the server asks the browser
 to retry with another URL.
 </p><p>Such services return a GET service without parameter at all.
@@ -126,8 +145,8 @@ Example:
     ~path:[&quot;redir&quot;]
     ~get_params:Eliom_parameter.unit
    (fun () () -&gt; Lwt.return coucou)</code></pre><p>If you want to give parameters to such services, use
-<span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_service#VALpreapply">Eliom_service.​preapply</a></span> (see also in
-<span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#preapplied">section about pre-applied services</a></span>).
+<span><a href=".././api/server/Eliom_service#VALpreapply">Eliom_service.preapply</a></span> (see also in
+<span><a href=".././manual/services#preapplied"> section about pre-applied services</a></span>).
 Example:
 </p><pre class=""><code class="language-ocaml translatable">let redir = Eliom_registration.Redirection.register_service
    ~options:`Temporary
@@ -139,17 +158,17 @@ Example:
 <span class="code">`Temporary</span> or <span class="code">`Permanent</span>.
 </p><p>Note that the cost of a redirection is one more request and
 one more response.
-</p><h5> Redirections to generated urls</h5><p>The <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.String_redirection">Eliom_registration.​String_redirection</a></span> allows you to
-register HTTP redirections to generated URLs. Usualy, prefer <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.String_redirection">Eliom_registration.​String_redirection</a></span>, even for external
-redirections (using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_service#VALexternal_service">Eliom_service.​external_service</a></span>).
-Use <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.String_redirection">Eliom_registration.​String_redirection</a></span> only when it is
+</p><h5> Redirections to generated urls</h5><p>The <span><a href=".././api/server/Eliom_registration.String_redirection">Eliom_registration.String_redirection</a></span> allows you to
+register HTTP redirections to generated URLs. Usualy, prefer <span><a href=".././api/server/Eliom_registration.String_redirection">Eliom_registration.String_redirection</a></span>, even for external
+redirections (using <span><a href=".././api/server/Eliom_service#VALexternal_service">Eliom_service.external_service</a></span>).
+Use <span><a href=".././api/server/Eliom_registration.String_redirection">Eliom_registration.String_redirection</a></span> only when it is
 not possible to have a service corresponding to an URL.
 </p><p>Notice that the supplied URL must be absolute.
 </p><h4 id="actions">Actions <a class="backref" href="#actions">&#182;</a></h4><p>Actions are used to perform sides effects before generating the
 fallback of a service. When an action is called, the service handler is
 executed, then the service handler of the fallback service is
 executed.
-</p><p>Eliom references of scope <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_common#VALrequest">Eliom_common.​request</a></span> set in
+</p><p>Eliom references of scope <span><a href=".././api/server/Eliom_common#VALrequest">Eliom_common.request</a></span> set in
 an action handler are still available in the service handler of the fallback.
 </p><aside class="wip"><header><h5>Work in progress</h5></header><p>for Vincent</p></aside><p>services that do not generate any page.
 Use them to perform an effect on the server (connection/disconnection
@@ -159,12 +178,12 @@ a forum, etc.).
 example, when you have the same form (or link) on several pages (e.g.
 a connection form), instead of making a version with post params of
 all these pages, you can use a single action, registered on a
-<span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services">non-attached coservice</a></span>.
+<span><a href=".././manual/services">non-attached coservice</a></span>.
 </p><p>See more details and an example in the section about non-attached coservices
 below, or in section * * connection-of-user.
 </p><p>The return type of action handlers is
 <span class="code">unit Lwt.t</span>.
-We will see <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/manual/services#infofallbacks">later</a></span> how to transmit information
+We will see <span><a href=".././manual/services#infofallbacks">later</a></span> how to transmit information
 to the service that will take charge of the generation of the page.<br/>
 </p><p>A common use of actions and non-attached coservices working together
 is the implementation of login/logout forms.
@@ -179,7 +198,7 @@ to create a version with POST parameters of each service.
 is usually much more complicated.
 </p><h4 id="any"> Registering services that decide what they want to send  <a class="backref" href="#any">&#182;</a></h4><p>You may want to register a service that will send, for instance,
 sometimes an XHTML page, sometimes a file, sometimes something else.
-To do that, use the <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Any">Eliom_registration.​Any</a></span> module,
+To do that, use the <span><a href=".././api/server/Eliom_registration.Any">Eliom_registration.Any</a></span> module,
 together with the <span class="code">send</span> function of the module
 you want to use. Example:
 </p><pre class=""><code class="language-ocaml translatable">let send_any =
@@ -200,7 +219,7 @@ you want to use. Example:
        Eliom_registration.HtmlText.send
          &quot;&lt;html&gt;&lt;body&gt;&lt;p&gt;It is not a valid page. Put type=\&quot;valid\&quot; in the
           URL to get a typechecked page.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;
-   )</code></pre><h5> Dynamicaly modifying register options using Any</h5><p>You may also use <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Any">Eliom_registration.​Any</a></span> to dynamicaly
+   )</code></pre><h5> Dynamicaly modifying register options using Any</h5><p>You may also use <span><a href=".././api/server/Eliom_registration.Any">Eliom_registration.Any</a></span> to dynamicaly
 modify the parameters usualy set on the register function. You can set
 the HTTP code, the charset, the content_type, the http headers and the
 specific option of the output module.
@@ -215,15 +234,15 @@ specific option of the output module.
           (head (title (pcdata &quot;forbidden&quot;)) [])
           (body [p [pcdata &quot;forbidden&quot;]])))</code></pre><h5> About Kind type and how to serve application and other content with the same service</h5><p>In Eliom application, changing the current page does not do always the
 same thing. When going to a page inside the same application by
-clicking a link (or calling <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/client/Eliom_client#VALchange_page">Eliom_client.​change_page</a></span>) the client
+clicking a link (or calling <span><a href=".././../../eliom/latest/api/client/Eliom_client#VALchange_page">Eliom_client.change_page</a></span>) the client
 application perform a XmlHttpRequest and modify the displayed page
 according to the result. When going to content outside the
 application (an other site, a static file, etc.) the client leaves the
 application by changing the browser url.
-</p><p>When using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Any">Eliom_registration.​Any</a></span>, there is no way to
+</p><p>When using <span><a href=".././api/server/Eliom_registration.Any">Eliom_registration.Any</a></span>, there is no way to
 know before the request wether the content is from the same
 application or not. To that end there are phantom type annotations to
-the type of the <span class="teletype">send</span> functions: <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration#TYPEkind">Eliom_registration.​kind</a></span>. The <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Any#VALregister">Eliom_registration.​Any.​register</a></span>
+the type of the <span class="teletype">send</span> functions: <span><a href=".././api/server/Eliom_registration#TYPEkind">Eliom_registration.kind</a></span>. The <span><a href=".././api/server/Eliom_registration.Any#VALregister">Eliom_registration.Any.register</a></span>
 takes a service handler that can server only one kind of content: that
 way it is not possible to inadvertantly mix kinds. The different kinds
 of content are:
@@ -234,7 +253,7 @@ directly: ex Html pages, files
 </li><li> Ocaml content: marshalled OCaml values.
 </li><li> Unknown content: content generated as text.
 </li></ul><p>Yet sometimes you can want to mix the kinds of contents a service can
-return. The function <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration#VALappl_self_redirect">Eliom_registration.​appl_self_redirect</a></span>
+return. The function <span><a href=".././api/server/Eliom_registration#VALappl_self_redirect">Eliom_registration.appl_self_redirect</a></span>
 allows to cast browser content to application content. When an
 application request some content casted througt that function the
 server send some informations telling the client to exit to that
@@ -257,8 +276,8 @@ something like that.
          (html
            (head (title (pcdata &quot;no page&quot;)) [])
            (body [p ~a:[a_onclick {{ do some client action }}]
-	     [pcdata &quot;the file does not exist&quot;]])))</code></pre><p>Unknown content can be casted to browser content using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration#VALcast_unknown_content_kind">Eliom_registration.​cast_unknown_content_kind</a></span>.
-</p><h3 id="creating">Creating your own output modules <a class="backref" href="#creating">&#182;</a></h3><h4 id="customize">By customizing an existing registration module <a class="backref" href="#customize">&#182;</a></h4><p>Using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration.Customize">Eliom_registration.​Customize</a></span> you can specialise a
+	     [pcdata &quot;the file does not exist&quot;]])))</code></pre><p>Unknown content can be casted to browser content using <span><a href=".././api/server/Eliom_registration#VALcast_unknown_content_kind">Eliom_registration.cast_unknown_content_kind</a></span>.
+</p><h3 id="creating">Creating your own output modules <a class="backref" href="#creating">&#182;</a></h3><h4 id="customize">By customizing an existing registration module <a class="backref" href="#customize">&#182;</a></h4><p>Using <span><a href=".././api/server/Eliom_registration.Customize">Eliom_registration.Customize</a></span> you can specialise a
 registration function to avoid code duplication. You can for instance
 for each service add parameters before calling the service handler, or
 modify the answer.
@@ -291,7 +310,7 @@ module Connected =
 to create your own registration module: For instance here we define a
 module serving integers as text. Notice that in that case you can and
 should use customize instead.
-</p><p>For that you need to use the <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_mkreg.MakeRegister">Eliom_mkreg.​MakeRegister</a></span> functor.
+</p><p>For that you need to use the <span><a href=".././api/server/Eliom_mkreg.MakeRegister">Eliom_mkreg.MakeRegister</a></span> functor.
 </p><pre class=""><code class="language-ocaml translatable">module Int_reg_base = struct
 
   type page = int
@@ -329,13 +348,13 @@ should use customize instead.
 
 end
 
-module Int = Eliom_mkreg.MakeRegister(Int_reg_base)</code></pre><p>If your <span class="teletype">page</span> type has parameters you should use <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_mkreg.MakeRegister_AlphaReturn">Eliom_mkreg.​MakeRegister_AlphaReturn</a></span> instead.
+module Int = Eliom_mkreg.MakeRegister(Int_reg_base)</code></pre><p>If your <span class="teletype">page</span> type has parameters you should use <span><a href=".././api/server/Eliom_mkreg.MakeRegister_AlphaReturn">Eliom_mkreg.MakeRegister_AlphaReturn</a></span> instead.
 </p><h2 id="lwt"> Writing cooperative service handlers with Lwt  <a class="backref" href="#lwt">&#182;</a></h2><p>Remember that a Web site written with Eliom is an OCaml application.
 This application must be able to handle several requests at the same
 time, in order to prevent a single request from making the whole
 server hang.  To make this possible, Ocsigen uses <em>cooperative
 threads</em> (implemented in monadic style) which make them really easy
-to use (see <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt">Lwt</a></span> module).
+to use (see <span><a href=".././../../lwt/latest/api/Lwt">Lwt</a></span> module).
 </p><p>Below is an example of a page written in a non-cooperative way, that
 has the effect of stopping the entire server for 5 seconds. No one
 will be able to query the server during this period:
@@ -350,7 +369,7 @@ let looong =
          Html5.D.(html
                     (head (title (pcdata &quot;&quot;)) [])
                     (body [h1 [pcdata &quot;Ok now, you can read the page.&quot;]])))</code></pre><p>To solve this problem, use a cooperative version of <span class="teletype">Unix.sleep</span>:
-<span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_unix#VALsleep">Lwt_unix.​sleep</a></span>:
+<span><a href=".././../../lwt/latest/api/Lwt_unix#VALsleep">Lwt_unix.sleep</a></span>:
 </p><pre class=""><code class="language-ocaml translatable">open Eliom_content
 let looong =
   Eliom_registration.Html5.register_service
@@ -363,7 +382,7 @@ let looong =
                    (head (title (pcdata &quot;&quot;)) [])
                    (body [h1 [pcdata &quot;Ok now, you can read the page.&quot;]])))</code></pre><p>If you want to use, say, a database library that is not written
 in a cooperative way, but is thread-safe for preemptive threads,
-use the <span><a class="ocsforge_doclink_lwt" href="/lwt/4.1.0/api/Lwt_preemptive">Lwt_preemptive</a></span> module to
+use the <span><a href=".././../../lwt/latest/api/Lwt_preemptive">Lwt_preemptive</a></span> module to
 detach the computation. In the following example,
 we simulate the request by making a call to <span class="code">Unix.sleep</span>:
 </p><pre class=""><code class="language-ocaml translatable">let looong2 =
@@ -378,8 +397,8 @@ we simulate the request by making a call to <span class="code">Unix.sleep</span>
            (body [h1 [pcdata &quot;Ok now, you can read the page.&quot;]])))</code></pre><h2 id="error_handling"> Error handling  <a class="backref" href="#error_handling">&#182;</a></h2><h3> Exception handling</h3><p>You can catch the exceptions raised during page generation in two places:
 </p><ul><li> add an exception handler to services using the <span class="teletype">?error_handler</span>
 parameter of the registration functions.
-</li><li> add a global exception handler using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_registration#VALset_exn_handler">Eliom_registration.​set_exn_handler</a></span>
-</li></ul><p>You can use it to catch exception <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_common#EXCEPTIONEliom_404">Eliom_common.​Eliom_404</a></span> and generate a custom 404 page.
+</li><li> add a global exception handler using <span><a href=".././api/server/Eliom_registration#VALset_exn_handler">Eliom_registration.set_exn_handler</a></span>
+</li></ul><p>You can use it to catch exception <span><a href=".././api/server/Eliom_common#EXCEPTIONEliom_404">Eliom_common.Eliom_404</a></span> and generate a custom 404 page.
 </p><pre class=""><code class="language-ocaml translatable">let _ = Eliom_registration.set_exn_handler
    (fun e -&gt; match e with
     | Eliom_common.Eliom_404 -&gt;
@@ -395,13 +414,13 @@ parameter of the registration functions.
              (body [h1 [pcdata &quot;Eliom tutorial&quot;];
                     p [pcdata &quot;Wrong parameters&quot;]]))
     | e -&gt; fail e)</code></pre><h3 id="infofallbacks"> Fallback services <a class="backref" href="#infofallbacks">&#182;</a></h3><p>You can check wether a service was directly called or if it was used
-as a fallback using the <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_request_info#VALget_link_too_old">Eliom_request_info.​get_link_too_old</a></span> function. In case of coservices
+as a fallback using the <span><a href=".././api/server/Eliom_request_info#VALget_link_too_old">Eliom_request_info.get_link_too_old</a></span> function. In case of coservices
 registered with a restricted scope, you can check which state was
-closed using <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_request_info#VALget_expired_service_sessions">Eliom_request_info.​get_expired_service_sessions</a></span>
+closed using <span><a href=".././api/server/Eliom_request_info#VALget_expired_service_sessions">Eliom_request_info.get_expired_service_sessions</a></span>
 </p><h3> Error in services handlers of actions</h3><p>If something wrong happens during an action, it is possible to inform
 the service generating the page. For instance if you want to display a
 &quot;wrong password&quot; message after an aborted connection.  To transmit
-that kind of information, use eliom references (see module <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_reference">Eliom_reference</a></span>) created using scope <span><a class="ocsforge_doclink_eliom" href="/eliom/2.2.2/api/server/Eliom_common#VALrequest">Eliom_common.​request</a></span>, the value will be available to the service
+that kind of information, use eliom references (see module <span><a href=".././api/server/Eliom_reference">Eliom_reference</a></span>) created using scope <span><a href=".././api/server/Eliom_common#VALrequest">Eliom_common.request</a></span>, the value will be available to the service
 generating the page.
 </p><p>Other examples: if you create user accounts using actions. if the
 creation fails you may want to display some message to the user, like
