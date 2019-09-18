@@ -464,3 +464,6 @@ type _ redirection =
     'a redirection
 
 val perform_reload : unit -> unit Lwt.t
+
+val headers : (string * string) list ref
+val add_header : string -> string -> unit

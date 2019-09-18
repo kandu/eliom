@@ -35,7 +35,7 @@ val xml_result : Dom.element Dom.document Js.t result
 val string_result : string result
 
 val headers : (string * string) list ref
-val add_header : string * string -> unit
+val add_header : string -> string -> unit
 
 val send :
   ?with_credentials:bool ->

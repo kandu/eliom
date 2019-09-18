@@ -113,7 +113,7 @@ let nl_template =
 let nl_template_string = "__nl_n_eliom-template.name"
 
 let headers = ref []
-let add_header h = headers := h :: !headers
+let add_header l r = headers := (l,r) :: !headers
 
 
 (** Same as XmlHttpRequest.perform_raw_url, but:
