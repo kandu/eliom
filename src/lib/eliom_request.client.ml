@@ -112,6 +112,8 @@ let nl_template =
 (* Warning: it must correspond to [nl_template]. *)
 let nl_template_string = "__nl_n_eliom-template.name"
 
+let headers = ref []
+let add_header h = headers := h :: !headers
 
 
 (** Same as XmlHttpRequest.perform_raw_url, but:
@@ -152,9 +154,10 @@ let send
     in
     let cookies = Eliommod_cookies.get_cookies_to_send host https path in
     let headers = match cookies with
-      | [] -> []
-      | _ -> [ Eliom_common.tab_cookies_header_name,
-               encode_header_value cookies ] in
+      | [] -> !headers
+      | _ -> ( Eliom_common.tab_cookies_header_name,
+               encode_header_value cookies ) :: !headers in
+    let headers = ("a", "b") :: headers in
     let headers =
       if Js.Unsafe.global##.___eliom_use_cookie_substitutes_ <> Js.undefined then
         (* Cookie substitutes are for iOS WKWebView *)
